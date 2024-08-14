@@ -2,7 +2,6 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(lubridate)
-library(writexl)
 library(stringr)
 library(sidrar)
 library(rvest)
@@ -131,4 +130,4 @@ violencia_mensal_sexo <- sergipe_mun |>
   arrange(Município, Variável, Mês)
 
 
-write_xlsx(violencia_mensal_sexo,"data/violencia_mensal.xlsx")
+saveRDS(violencia_mensal_sexo, "data/violencia_mensal.rds")
