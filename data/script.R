@@ -72,7 +72,7 @@ serie_violencia <- do.call(rbind, lapply(arquivos, ler_excel))
 file.remove(list.files(pattern = "\\.xlsx$"))
 
 
-ajuste <-read.csv2('municipios.csv')
+ajuste <-read.csv2('data/municipios.csv')
 
 
 
