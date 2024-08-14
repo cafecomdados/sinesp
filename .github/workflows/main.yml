@@ -23,7 +23,6 @@ jobs:
             any::tidyr
             any::readxl
             any::lubridate
-            any::writexl
             any::stringr
             any::sidrar 
             any::rvest 
