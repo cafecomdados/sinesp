@@ -20,7 +20,7 @@ xlsx_links <- links[grep("bancovde-202", links)]
 
 
 # Função para baixar arquivos e salvar com nome original com tentativas de reintento
-download_xlsx <- function(url, attempts = 5) {
+download_xlsx <- function(url, attempts = 7) {
   # Extrair o nome do arquivo da URL
   file_name <- sub(".*/(bancovde-\\d{4}\\-1.xlsx)/.*", "\\1", url) ## antes não tinha esse -1 antes do xlsx no nome do arquivo original
   
