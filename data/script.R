@@ -20,10 +20,11 @@ xlsx_links <- links[grep("bancovde-202", links)]
 
 
 # Função para baixar arquivos e salvar com nome original com tentativas de reintento
-download_xlsx <- function(url, attempts = 7) {
-  # Extrair o nome do arquivo da URL
-  file_name <- sub(".*/(bancovde-\\d{4}\\-1.xlsx)/.*", "\\1", url) ## antes não tinha esse -1 antes do xlsx no nome do arquivo original
-  
+download_xlsx <- function(url, attempts = 5) {
+  # Extrair o nome do arquivo da URL usando uma expressão regular adequada
+  file_name <- basename(url) %>% 
+    str_extract("bancovde-\\d{4}(-\\d)?\\.xlsx")
+
   success <- FALSE
   attempt <- 1
   
@@ -45,6 +46,7 @@ download_xlsx <- function(url, attempts = 7) {
     message("All attempts to download ", url, " have failed.")
   }
 }
+
 
 # Loop para baixar cada arquivo
 for (link in xlsx_links) {
