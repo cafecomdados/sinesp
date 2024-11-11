@@ -118,7 +118,7 @@ violencia_mensal_sexo <- sergipe_mun |>
     feminino = sum(feminino, na.rm = TRUE),
     masculino = sum(masculino, na.rm = TRUE),
     nao_informado = sum(nao_informado, na.rm = TRUE),
-    Total = sum(total_vitimas, na.rm = TRUE),
+    Total = sum(total_vitima, na.rm = TRUE),
     .groups = 'drop') |> 
   rename(Feminino = feminino, Masculino = masculino, `Não informado` = nao_informado) |> 
   pivot_longer(cols = c(Feminino, Masculino, `Não informado`, Total),
